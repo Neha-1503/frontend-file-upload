@@ -82,7 +82,7 @@ export default {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
-          url: 'http://localhost:8000/fileUpload/file',
+          url: 'http://65.1.54.246:8000/fileUpload/file',
           data: formData
         })
         setTimeout(async () => {
@@ -99,7 +99,7 @@ export default {
     try {
       await axios({
         method: 'get',
-        url: 'http://localhost:8000/fileUpload/files',
+        url: 'http://65.1.54.246:8000/fileUpload/files',
       }).then((res) => {
         files.value = res.data;
         files.value.sort((file1,file2) => {
@@ -118,7 +118,7 @@ export default {
       try {
         await axios({
           method: 'get',
-          url: `http://localhost:8000/fileUpload/download/${fileId}`,
+          url: `http://65.1.54.246:8000/fileUpload/download/${fileId}`,
           responseType: 'arraybuffer',
         }).then((res) => {
           const link = document.createElement('a');
@@ -267,4 +267,3 @@ export default {
     display: none;
   }
 </style>
-
